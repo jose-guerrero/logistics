@@ -1,0 +1,17 @@
+
+#instructions{
+  opacity:1;
+}
+
+#maincontainer{
+  display: flex;
+  width: 800px;
+  opacity: 0;
+}
+
+.canvasjs-chart-credit{
+  display: none;
+}
+.canvasjs-chart-tooltip{
+  display: none;
+}
