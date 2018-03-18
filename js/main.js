@@ -4,7 +4,7 @@ window.onload = function(){
   let butsim = document.getElementById('simular');
   let operate1 = document.getElementById('operate1');
 
-  let fam1 = 10;  /// it has to be normal distribution
+  let fam1 = 500;  /// it has to be normal distribution
   let fam2 = 20;  /// it has to be normal distribution
   let fam3 = 50;  /// it has to be normal distribution
   let fam4 = 10;  /// it has to be normal distribution
@@ -57,12 +57,60 @@ window.onload = function(){
 
   operate1.onclick = function(){
     let value1 = document.getElementById('first_value').value;
+    let tab = document.getElementById('table');
+    // Create table body.
+
+    let tBody = document.createElement('tbody');
+    tab.appendChild(tBody);
 
     showresults1.style.opacity = 1;
-
+/*
     console.log(fam1+ " necesitan " + fam1 +"Kg");
     console.log("Costo de la compra "  +10*fam1 +"soles");
+*/
+    let tr = document.createElement('tr');
+    tBody.appendChild(tr);
 
+    for (let i = 0; i<6; i++)
+    {
+      let td = document.createElement('td');
+
+      if (i==0)
+      {
+        td.innerHTML = fam1 + " familias";
+      }
+
+      if (i==1)
+      {
+        td.innerHTML = 10*value1 + " Kg";
+      }
+      if (i==2)
+      {
+        td.innerHTML = 5*value1 + " soles";
+      }
+      if (i==3)
+      {
+      //  td.innerHTML = (((value1 - fam1)<0)?(fam1 - value1):0) + (((value1 - fam1)==1)?"familia":" familias");
+
+      td.innerHTML = (value1-fam1) + (((value1 - fam1)==1)?"familia":" familias");
+      }
+      if (i==4)
+      {
+      //  td.innerHTML = (((value1 - fam1)<0)?(fam1 - value1):0) + (((value1 - fam1)==1)?"familia":" familias");
+
+      td.innerHTML = 10*(value1-fam1) + "soles";
+      }
+
+      if (i==5)
+      {
+
+      td.innerHTML = 15*(value1-fam1) + "puntos";
+      }
+
+      tr.appendChild(td);
+    }
+
+    tab.appendChild(tr);
 
   }
 

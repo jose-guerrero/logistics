@@ -34,3 +34,23 @@ button{
 #showresults1{
   opacity: 0;
 }
+
+#table{
+  width: 750px;
+  margin: 0 auto;
+}
+
+
+table,tr,th,td{
+  border: 1px solid black;
+
+}
+
+
+th,td,tr{
+  text-align: center;
+}
+
+table{
+  border-collapse: collapse;
+}
