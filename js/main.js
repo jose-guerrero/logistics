@@ -4,11 +4,6 @@ window.onload = function(){
   let butsim = document.getElementById('simular');
   let operate1 = document.getElementById('operate1');
 
-  let fam1 = 500;  /// it has to be normal distribution
-  let fam2 = 20;  /// it has to be normal distribution
-  let fam3 = 50;  /// it has to be normal distribution
-  let fam4 = 10;  /// it has to be normal distribution
-
   var chart = new CanvasJS.Chart("chartContainer", {
   	animationEnabled: true,
   	title:{
@@ -44,18 +39,42 @@ window.onload = function(){
   });
   chart.render();
 
+  var spareRandom = null;
+
+
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
 
   but01.onclick = function(){
-    instructions.style.opacity = 0;
+    instructions.style.display = "none";
     maincontainer.style.opacity = 1;
   }
 
   butsim.onclick = function(){
-    console.log(fam1);
+
     result1.style.opacity = 1;
   }
 
   operate1.onclick = function(){
+
+
+    let situation = getRandomInt(0,2);
+    let fam1;
+    if (situation==0)
+    {
+      fam1 = getRandomInt(8,12);
+    }
+    if (situation==1)
+    {
+      fam1 = getRandomInt(16,24);
+    }
+    if (situation==2)
+    {
+      fam1 = getRandomInt(45,55);
+    }
+
+
     let value1 = document.getElementById('first_value').value;
     let tab = document.getElementById('table');
     // Create table body.
@@ -104,7 +123,7 @@ window.onload = function(){
       if (i==5)
       {
 
-      td.innerHTML = 15*(value1-fam1) + "puntos";
+      td.innerHTML = ((value1-fam1<0)?15*(fam1-value1):0) + " puntos";
       }
 
       tr.appendChild(td);

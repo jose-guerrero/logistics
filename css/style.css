@@ -1,6 +1,18 @@
 
 #instructions{
-  opacity:1;
+  display: block;
+    width: 800px;
+  margin: 0 auto;
+}
+#but01{
+  display: block;
+  margin: 0 auto;
+
+}
+
+#simular{
+  display: block;
+  width: 100px;
 }
 
 #maincontainer{
@@ -23,10 +35,10 @@
   display: block;
 }
 
-button{
+p{
   display: block;
+  margin: 0 auto;
 }
-
 #result1{
   opacity: 0;
 }
