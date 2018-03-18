@@ -26,3 +26,11 @@
 button{
   display: block;
 }
+
+#result1{
+  opacity: 0;
+}
+
+#showresults1{
+  opacity: 0;
+}

@@ -1,18 +1,13 @@
 window.onload = function(){
 
   let but01 = document.getElementById('but01');
-
-  let but2018 = document.getElementById('but2018');
-  let but2019 = document.getElementById('but2019');
-  let but2020 = document.getElementById('but2020');
-  let but2021 = document.getElementById('but2021');
-
+  let butsim = document.getElementById('simular');
+  let operate1 = document.getElementById('operate1');
 
   let fam1 = 10;  /// it has to be normal distribution
   let fam2 = 20;  /// it has to be normal distribution
   let fam3 = 50;  /// it has to be normal distribution
   let fam4 = 10;  /// it has to be normal distribution
-
 
   var chart = new CanvasJS.Chart("chartContainer", {
   	animationEnabled: true,
@@ -55,12 +50,20 @@ window.onload = function(){
     maincontainer.style.opacity = 1;
   }
 
-  but2018.onclick = function(){
+  butsim.onclick = function(){
     console.log(fam1);
+    result1.style.opacity = 1;
+  }
 
+  operate1.onclick = function(){
+    let value1 = document.getElementById('first_value').value;
+
+    showresults1.style.opacity = 1;
+
+    console.log(fam1+ " necesitan " + fam1 +"Kg");
+    console.log("Costo de la compra "  +10*fam1 +"soles");
 
 
   }
-
 
 }
