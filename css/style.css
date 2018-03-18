@@ -5,7 +5,10 @@
 
 #maincontainer{
   display: flex;
+  justify-content: center;
+  flex-direction: column;
   width: 800px;
+  margin: 0 auto;
   opacity: 0;
 }
 
@@ -14,4 +17,12 @@
 }
 .canvasjs-chart-tooltip{
   display: none;
+}
+
+#buttons{
+  display: block;
+}
+
+button{
+  display: block;
 }
